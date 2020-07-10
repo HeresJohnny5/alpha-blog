@@ -35,4 +35,11 @@ class ArticlesController < ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path
+    #articles is found in the routes prefix, it can be something else depending on the route
+  end
 end
