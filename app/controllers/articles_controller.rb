@@ -1,10 +1,12 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show, :edit, :update,]
+  # This helper will perform the symbol before any action method
+
   def index
     @articles = Article.all
   end
 
   def show
-    @article = Article.find(params[:id])
   end
 
   def new
@@ -12,7 +14,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(params.require(:article).permit(:title, :description))
+    @article = Article.new(article_params)
     
     if @article.save
       flash[:notice] = "Article was created successfully."
@@ -23,12 +25,10 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
-    if @article.update(params.require(:article).permit(:title, :description))
+    if @article.update(article_params)
       flash[:notice] = "Article was updated successfully."
       redirect_to @article
     else
@@ -37,9 +37,20 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path
     #articles is found in the routes prefix, it can be something else depending on the route
+  end
+
+  private
+  # very important, methods ***below*** private are not available outside of this controller. You do not want to put the private keyword above controller actions
+  # private is not a class definition nor a method and thus it does not need an 'end'
+  
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :description)
   end
 end
