@@ -2,31 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.jumbotron {
-  background: url('https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin: 50px;
+.page-content {
+  flex: 1 0 auto;
 
-  h1 {
-    color: #fff;
-    text-align: center;
-  }
-
-  .hero-content {
-    text-align: center;
-
-    p {
+  .jumbotron {
+    background: url('https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 50px;
+  
+    h1 {
       color: #fff;
+      text-align: center;
     }
-
-    hr {
-      border-top-color: #fff;
+  
+    .hero-content {
+      text-align: center;
+  
+      p {
+        color: #fff;
+      }
+  
+      hr {
+        border-top-color: #fff;
+      }
     }
-  }
-
-  .hero-btn {
-    text-align: center;
+  
+    .hero-btn {
+      text-align: center;
+    }
   }
 }
