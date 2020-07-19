@@ -2,6 +2,12 @@ class User < ApplicationRecord
   has_many :articles
   
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  before_save {
+    self.email = email.downcase
+  }
+  # The before_save function will run code before saving the object to the database. 
+  # 
   
   validates :username, 
   presence: true, 

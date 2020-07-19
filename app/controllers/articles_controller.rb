@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update,]
-  # This helper will perform the symbol before any action method
+  # This helper will perform the symbol before any action method listed
 
   def index
     @articles = Article.all
