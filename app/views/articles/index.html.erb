@@ -5,7 +5,7 @@
     <div class="col-6">
       <% @articles.each do |article| %>
         <div class="card text-center mb-4 shadow">
-          <div class="card-header font-italic">by John Erickson</div>
+          <div class="card-header font-italic">by <%= article.user.username %></div>
           <div class="card-body">
             <h5 class="card-title">
               <%= link_to article.title, article_path(article), method: :get, class: 'text-success' %>
