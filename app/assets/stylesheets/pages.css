@@ -1,0 +1,35 @@
+.page-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.page-content .jumbotron {
+  background: url("https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 50px;
+}
+
+.page-content .jumbotron h1 {
+  color: #fff;
+  text-align: center;
+}
+
+.page-content .jumbotron .hero-content {
+  text-align: center;
+}
+
+.page-content .jumbotron .hero-content p {
+  color: #fff;
+}
+
+.page-content .jumbotron .hero-content hr {
+  border-top-color: #fff;
+}
+
+.page-content .jumbotron .hero-btn {
+  text-align: center;
+}
+/*# sourceMappingURL=pages.css.map */

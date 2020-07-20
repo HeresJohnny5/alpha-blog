@@ -7,7 +7,6 @@ class User < ApplicationRecord
     self.email = email.downcase
   }
   # The before_save function will run code before saving the object to the database. 
-  # 
   
   validates :username, 
   presence: true, 
@@ -19,4 +18,6 @@ class User < ApplicationRecord
     uniqueness: true, 
     length: { maximum: 105 },
     format: { with: VALID_EMAIL_REGEX }
+  
+  has_secure_password
 end
